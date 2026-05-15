@@ -191,9 +191,6 @@ async function guardarDatos() {
 
     const respuesta = await fetch(URL_GOOGLE_APPS_SCRIPT, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      },
       body: JSON.stringify(payload)
     });
 
