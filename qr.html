@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar por Boletos - Sistema de Venta</title>
+    <link rel="stylesheet" href="styles-qr.css">
+</head>
+
+<body>
+    <div class="container-qr">
+        <header class="header-qr">
+            <h1>💳 Pagar por Boletos</h1>
+            <p>Escanea el código QR para pagar</p>
+            <a href="index.html" class="btn-volver">← Volver al formulario</a>
+        </header>
+
+        <div class="contenido-qr">
+            <!-- SECCIÓN 1: Mostrar datos del comprador -->
+            <section class="seccion datos-estudiante">
+                <h2>📄 Tu Compra</h2>
+                <div id="datosVisible" class="datos-box">
+                    <!-- Se llena con JavaScript -->
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: Mostrar QR de Pago -->
+            <section class="seccion qr-container">
+                <h2>📱 Código QR de Pago</h2>
+                <div class="qr-box">
+                    <img id="qrPagoImagen" src="qr-pago.jpeg" alt="QR de Pago"
+                        style="max-width: 100%; max-height: 300px;">
+                </div>
+                <p style="text-align: center; color: #666; font-size: 13px; margin-top: 10px;">
+                    📸 Escanea este QR con tu billetera móvil para pagar
+                </p>
+            </section>
+
+            <!-- SECCIÓN 3: Subir comprobante de pago -->
+            <section class="seccion subir-comprobante">
+                <h2>📎 Subir Comprobante de Pago</h2>
+                <p class="info-texto">Sube el comprobante de tu pago (captura de pantalla, imagen o PDF)</p>
+
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                    </svg>
+                    <p>Arrastra tu archivo aquí o <strong>haz clic para seleccionar</strong></p>
+                    <input type="file" id="comprobante" accept="image/*,.pdf" style="display: none;">
+                </div>
+
+                <div id="archivoSeleccionado" class="archivo-info" style="display: none;">
+                    <p>📄 <span id="nombreArchivo"></span></p>
+                    <button type="button" id="btnCambiarArchivo" class="btn-cambiar">
+                        Cambiar archivo
+                    </button>
+                </div>
+
+                <div id="contenedorBotones" class="contenedor-botones">
+                    <button type="button" id="btnGuardar" class="btn-primary" disabled>
+                        ✅ Confirmar Compra
+                    </button>
+                </div>
+
+                <!-- Mensajes -->
+                <div id="mensajeCarga" class="mensaje info" style="display: none;">
+                    ⏳ Guardando compra...
+                </div>
+                <div id="mensajeError" class="mensaje error"></div>
+                <div id="mensajeExito" class="mensaje exito"></div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-qr">
+            <p>© 2026 Sistema de Venta de Boletos</p>
+        </footer>
+    </div>
+
+    <script src="qr-script.js"></script>
+</body>
+
+</html>

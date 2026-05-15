@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4e4e4e 0%, #808080 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Estilos del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #575757;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+/* Botón principal */
+.btn-primary {
+    padding: 14px;
+    background: linear-gradient(135deg, #5d5d5d 0%, #848484 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(126, 126, 126, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Mensajes */
+.mensaje {
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.mensaje.error {
+    background-color: #fee;
+    color: rgb(209, 38, 38);
+    border: 1px solid #fcc;
+    display: block;
+}
+
+.mensaje.exito {
+    background-color: #efe;
+    color: #3c3;
+    border: 1px solid #cfc;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 16px; /* Previene zoom en iOS */
+    }
+}

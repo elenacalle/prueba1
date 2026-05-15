@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de QR - Registro Universitario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Registro Compra de Boletos</h1>
+            <p>Completa el formulario para generar tu código QR</p>
+        </header>
+
+        <form id="formulario" class="form-container">
+            <!-- Campo: Nombre Completo -->
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <!-- Campo: CI (Cédula de Identidad) -->
+            <div class="form-group">
+                <label for="ci">CI (Cédula de Identidad)</label>
+                <input type="text" id="ci" name="ci" placeholder="Ej: 12345678" required>
+            </div>
+
+            <!-- Campo: Correo -->
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="Ej: juan@ejemplo.com" required>
+            </div>
+
+            <!-- Campo: Celular -->
+            <div class="form-group">
+                <label for="celular">Celular</label>
+                <input type="tel" id="celular" name="celular" placeholder="Ej: +58 412 1234567" required>
+            </div>
+
+            <!-- Campo: Cantidad de Boletos -->
+            <div class="form-group">
+                <label for="cantidadBoletos">Cantidad de Boletos</label>
+                <input type="number" id="cantidadBoletos" name="cantidadBoletos" placeholder="Ej: 5" min="1" value="1"
+                    required>
+                <small style="color: #999; margin-top: 5px; display: block;">Sin límite de boletos</small>
+            </div>
+
+            <!-- Botón: Comprar Boletos -->
+            <button type="button" id="btnGenerarQR" class="btn-primary">
+                Comprar Boletos
+            </button>
+        </form>
+
+        <!-- Mensaje de carga -->
+        <div id="mensajeError" class="mensaje error"></div>
+        <div id="mensajeExito" class="mensaje exito"></div>
+    </div>
+
+    <!-- Script para manejar el formulario -->
+    <script src="script.js"></script>
+</body>
+
+</html>
